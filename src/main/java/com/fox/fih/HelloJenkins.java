@@ -1,6 +1,8 @@
 package com.fox.fih;
 
 import java.io.IOException;
+import java.util.Properties;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +27,9 @@ public class HelloJenkins extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Hello: #name#").append(request.getContextPath());
+		Properties props = new Properties();
+		props.load(getClass().getClassLoader().getResourceAsStream("api.config"));
+		response.getWriter().append("Hello: "+props.getProperty("name")).append(request.getContextPath());
 	}
 
 }

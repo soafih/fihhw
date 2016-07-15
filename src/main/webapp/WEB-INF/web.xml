@@ -9,4 +9,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>helloj</servlet-name>
+  	<servlet-class>com.fox.fih.HelloJenkins</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>helloj</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
 </web-app>
